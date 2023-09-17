@@ -29,7 +29,7 @@
             let valorVenda = valorCompra - valorDesconto;
 
             let itemVenda = document.createElement("li");
-            itemVenda.textcontent = "R$ ", valorVenda;
+            itemVenda.textContent = "R$ " + valorVenda.toFixed(2);
             vendas.appendChild(itemVenda);
         })
 
