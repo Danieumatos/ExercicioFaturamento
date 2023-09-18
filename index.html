@@ -21,17 +21,27 @@
 
     <script>
         const btn = document.getElementById("botaoVender");
-        let vendas = document.getElementById("vendas");
+        const faturamentoTotalElement = document.getElementById("faturamentoTotal");
+        let faturamentoTotal = 0;
 
         btn.addEventListener("click", function () {
             let valorCompra = parseFloat(prompt("Digite o valor da compra."));
             let valorDesconto = parseFloat(prompt("Digite o valor do desconto."));
-            let valorVenda = valorCompra - valorDesconto;
-
+            
             let itemVenda = document.createElement("li");
-            itemVenda.textContent = "R$ " + valorVenda.toFixed(2);
+            itemVenda.textContent = "R$ " + valorCompra.toFixed(2);
             vendas.appendChild(itemVenda);
+
+            let valorFaturado = valorCompra - valorDesconto;
+
+            let itemFaturamento = document.createElement("li");
+            itemFaturamento.textContent = "R$ " + valorFaturado.toFixed(2);
+            faturamento.appendChild(itemFaturamento);
+
+            faturamentoTotal += valorFaturado;
+            faturamentoTotalElement.textContent = "R$ " + faturamentoTotal.toFixed(2);
         })
+
 
     </script>
 </body>
